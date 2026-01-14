@@ -1,99 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Responsive Landing Page</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>Stopwatch App</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav id="navbar">
-    <div class="logo">MyLanding</div>
-    <ul class="nav-links">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#services" class="nav-link">Services</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+  <h1>Stopwatch</h1>
 
-  <!-- ===== HOME ===== -->
-  <section id="home" class="section hero">
-    <h1>Responsive Landing Page</h1>
-    <p>Modern UI with interactive navigation</p>
-  </section>
+  <div id="display">00:00:00:00</div>
+  <div class="format">HH : MM : SS : MS</div>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about" class="section light">
-    <div class="container">
-      <h2>About</h2>
-      <p>
-        This is a responsive landing page created as part of the Prodigy InfoTech
-        Web Development Internship Task 01. It features an interactive navigation
-        bar, smooth scrolling, and a modern user interface.
-      </p>
-    </div>
-  </section>
+  <div class="buttons">
+  <button onclick="startTimer()">Start</button>
+  <button onclick="pauseTimer()">Pause</button>
+  <button onclick="lapTime()">Lap</button>
+  <button onclick="resetTimer()">Reset</button>
+</div>
 
-  <!-- ===== SERVICES ===== -->
-  <section id="services" class="section gray">
-    <div class="container">
-      <h2>Services</h2>
 
-      <div class="service-cards">
-        <div class="card">
-          <h3>Web Development</h3>
-          <p>I build responsive and modern websites.</p>
-        </div>
+  <ul id="laps"></ul>
+</div>
 
-        <div class="card">
-          <h3>UI/UX Design</h3>
-          <p>Clean and user-friendly designs.</p>
-        </div>
-
-        <div class="card">
-          <h3>Projects</h3>
-          <p>Real-world development projects.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section id="contact" class="section light">
-    <div class="container">
-      <h2>Contact</h2>
-
-      <div class="contact-box">
-        <p>
-          📧 Email:
-          <a href="mailto:kirtiratnamakhare@gmail.com">
-            kirtiratnamakhare@gmail.com
-          </a>
-        </p>
-
-        <p>
-          💻 GitHub:
-          <a href="https://github.com/Kirtiratna2205" target="_blank">
-            github.com/Kirtiratna2205
-          </a>
-        </p>
-
-        <p>
-          🔗 LinkedIn:
-          <a href="https://www.linkedin.com/in/kirtiratna-makhare-aab4a1327/" target="_blank">
-            linkedin.com/in/kirtiratna-makhare
-          </a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    © 2026 Kirtiratna Makhare | Prodigy InfoTech Internship Task
-  </footer>
 
   <script src="script.js"></script>
 </body>

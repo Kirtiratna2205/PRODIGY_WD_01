@@ -2,149 +2,105 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
 }
 
-/* ===== NAVBAR ===== */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 90px;
-  padding: 0 40px;
-  background: #0a0a0a;
+/* Card */
+.container {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  padding: 30px 35px;
+  border-radius: 16px;
+  text-align: center;
+  width: 320px;
+  color: #fff;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Title */
+.container h1 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+/* Time display */
+#display {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 15px 0 5px;
+  letter-spacing: 2px;
+}
+
+.format {
+  font-size: 11px;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+/* Buttons */
+.buttons {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  z-index: 1000;
+  margin-bottom: 20px;
 }
 
-.logo {
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  color: #6c63ff;
-}
-
-/* ===== SECTIONS ===== */
-.section {
-  min-height: 100vh;
-  padding: 120px 40px 60px;
-
-  /* 🔥 FIX FOR EXTRA SPACE */
-  scroll-margin-top: 90px;
-}
-
-.hero {
-  background: linear-gradient(135deg, #3a0ca3, #4361ee);
-  color: white;
-  text-align: center;
-}
-
-.light {
-  background: #ffffff;
-  color: #111;
-}
-
-.gray {
-  background: #f5f7fb;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* ===== ABOUT ===== */
-#about p {
-  margin-top: 12px;
-  line-height: 1.7;
-  color: #555;
-}
-
-/* ===== SERVICES ===== */
-.service-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.card {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-  transition: 0.3s;
-  text-align: center;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-.card h3 {
-  color: #6c63ff;
-  margin-bottom: 10px;
-}
-
-/* ===== CONTACT ===== */
-.contact-box {
-  margin-top: 20px;
-  background: #f9fafb;
-  padding: 25px;
-  border-radius: 12px;
-  max-width: 520px;
-}
-
-.contact-box p {
-  margin-bottom: 12px;
-  font-size: 16px;
-}
-
-.contact-box a {
-  color: #6c63ff;
-  text-decoration: none;
+.buttons button {
+  flex: 1;
+  margin: 0 4px;
+  padding: 8px 0;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
+  color: #222;
+  font-size: 14px;
   font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.contact-box a:hover {
-  text-decoration: underline;
+.buttons button:hover {
+  background: #ffcc70;
+  transform: translateY(-2px);
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #0a0a0a;
-  color: white;
-  text-align: center;
-  padding: 15px;
+/* Lap list */
+#laps {
+  list-style: none;
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 5px;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .nav-links {
-    gap: 15px;
-    font-size: 14px;
+#laps li {
+  background: rgba(255, 255, 255, 0.12);
+  margin: 6px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: left;
+}
+
+/* Scrollbar */
+#laps::-webkit-scrollbar {
+  width: 5px;
+}
+#laps::-webkit-scrollbar-thumb {
+  background: #ffcc70;
+  border-radius: 10px;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .container {
+    width: 90%;
   }
 }

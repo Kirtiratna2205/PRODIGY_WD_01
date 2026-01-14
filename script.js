@@ -1,19 +1,53 @@
-const sections = document.querySelectorAll(".section");
-const navLinks = document.querySelectorAll(".nav-link");
+let timer = null;
+let milliseconds = 0;
+let running = false;
+let lapCount = 0;
 
-/* ===== ACTIVE LINK ON SCROLL ===== */
-window.addEventListener("scroll", () => {
-  let current = "";
+function formatTime(ms) {
+  let hrs = Math.floor(ms / 3600000);
+  let mins = Math.floor((ms % 3600000) / 60000);
+  let secs = Math.floor((ms % 60000) / 1000);
+  let millis = Math.floor((ms % 1000) / 10);
 
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 120;
-    if (scrollY >= sectionTop) current = section.id;
-  });
+  return (
+    String(hrs).padStart(2, "0") + ":" +
+    String(mins).padStart(2, "0") + ":" +
+    String(secs).padStart(2, "0") + ":" +
+    String(millis).padStart(2, "0")
+  );
+}
 
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
+function startTimer() {
+  if (!running) {
+    running = true;
+    timer = setInterval(() => {
+      milliseconds += 10;
+      document.getElementById("display").innerText = formatTime(milliseconds);
+    }, 10);
+  }
+}
+
+function pauseTimer() {
+  running = false;
+  clearInterval(timer);
+}
+
+function resetTimer() {
+  running = false;
+  clearInterval(timer);
+  milliseconds = 0;
+  lapCount = 0;
+  document.getElementById("display").innerText = "00:00:00:00";
+  document.getElementById("laps").innerHTML = "";
+}
+
+function lapTime() {
+  if (running) {
+    lapCount++;
+
+    const lap = document.createElement("li");
+    lap.innerText = lapCount + ". " + formatTime(milliseconds);
+
+    document.getElementById("laps").appendChild(lap);
+  }
+}
