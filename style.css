@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  padding: 0 40px;
+  background: #0a0a0a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #6c63ff;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  min-height: 100vh;
+  padding: 120px 40px 60px;
+
+  /* 🔥 FIX FOR EXTRA SPACE */
+  scroll-margin-top: 90px;
+}
+
+.hero {
+  background: linear-gradient(135deg, #3a0ca3, #4361ee);
+  color: white;
+  text-align: center;
+}
+
+.light {
+  background: #ffffff;
+  color: #111;
+}
+
+.gray {
+  background: #f5f7fb;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* ===== ABOUT ===== */
+#about p {
+  margin-top: 12px;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* ===== SERVICES ===== */
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  color: #6c63ff;
+  margin-bottom: 10px;
+}
+
+/* ===== CONTACT ===== */
+.contact-box {
+  margin-top: 20px;
+  background: #f9fafb;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 520px;
+}
+
+.contact-box p {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+.contact-box a {
+  color: #6c63ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 15px;
+    font-size: 14px;
+  }
+}
